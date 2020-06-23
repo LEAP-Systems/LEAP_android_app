@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">LEAP_android</string>
+    <string name="read_data">Extract Data</string>
+    <string name="check_data">Check Data</string>
 </resources>
