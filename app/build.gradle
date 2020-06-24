@@ -4,6 +4,10 @@ android {
     compileSdkVersion 30
     buildToolsVersion "29.0.2"
 
+    lintOptions {
+        abortOnError false
+    }
+
     defaultConfig {
         applicationId "com.leap_android"
         minSdkVersion 16
