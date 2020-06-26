@@ -32,36 +32,11 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         Log.d("lifecycle","onResume invoked");
 
-        addListenerOnExtData();
-        addListenerOnCheckData();
+
     }
 
 
-    public void addListenerOnExtData() {
 
-        final Button ext_data = findViewById(R.id.ext_data_button);
-
-        ext_data.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Toast.makeText(getApplicationContext(),"You have clicked Read Data", Toast.LENGTH_LONG).show();
-            }
-        });
-    }
-
-    public void addListenerOnCheckData() {
-
-        final Button ext_data = findViewById(R.id.check_data_button);
-
-        ext_data.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Toast.makeText(getApplicationContext(),"You have clicked Check Data", Toast.LENGTH_LONG).show();
-            }
-        });
-    }
 
 
     @Override

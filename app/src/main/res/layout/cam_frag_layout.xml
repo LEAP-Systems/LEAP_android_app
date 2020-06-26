@@ -4,11 +4,18 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="This is the camera fragment" />
+
     <FrameLayout
         android:id="@+id/frameLayoutView"
         android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        />
+        android:layout_width="match_parent">
+    </FrameLayout>
+
 
     <Button
         android:id="@+id/button_capture"

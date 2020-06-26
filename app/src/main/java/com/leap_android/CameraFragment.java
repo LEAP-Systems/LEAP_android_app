@@ -20,10 +20,8 @@ public class CameraFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.cam_frag_layout, container, false);
-
-
-
+        View cam_view = inflater.inflate(R.layout.cam_frag_layout, container, false);
+        return cam_view;
     }
 
 
