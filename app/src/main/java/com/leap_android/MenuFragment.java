@@ -21,8 +21,15 @@ public class MenuFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View menu_view = inflater.inflate(R.layout.menu_frag_layout, container, false);
-        MenuContext = getContext();
-        MenuView = getView();
+        MenuView = menu_view;
+        //Make android studio happy by letting it know that button view is not null
+        assert MenuView != null;
+
+        //Get activity which extends to context which is used for Toast testing
+        MenuContext = getActivity();
+        //Make android studio happy by letting it know that button view is not null
+        assert MenuContext != null;
+
         return menu_view;
     }
 
@@ -43,10 +50,9 @@ public class MenuFragment extends Fragment {
     }
 
     public void addListenerOnExtData() {
-
+        //Find button relative to fragment layout view
         Button ext_data = MenuView.findViewById(R.id.ext_data_button);
-        //Make android studio happy by letting it know that button view is not null
-        assert ext_data != null;
+
 
         ext_data.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,10 +65,9 @@ public class MenuFragment extends Fragment {
 
     public void addListenerOnCheckData() {
 
+
         final Button check_data = MenuView.findViewById(R.id.check_data_button);
 
-        //Make android studio happy by letting it know that button view is not null
-        assert check_data != null;
 
         check_data.setOnClickListener(new View.OnClickListener() {
             @Override
