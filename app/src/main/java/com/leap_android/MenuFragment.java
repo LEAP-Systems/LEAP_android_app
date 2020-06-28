@@ -61,15 +61,21 @@ public class MenuFragment extends Fragment {
             public void onClick(View view) {
 
                 //Call fragment manager
-                getActivity().getSupportFragmentManager().popBackStack();
-                final FragmentTransaction ExtDataManager = getFragmentManager().beginTransaction();
+                //Add null checks cause Android studio is not clear about Nullpointerexception errors
 
-                //Replace it with Camera Fragment layout
-                ExtDataManager.replace(R.id.menu_frag, new CameraFragment(), "CameraFragmentTag");
-                //push replacement and add this previous fragment to backstack incase want to go back to it
+                try {
+                    getActivity().getFragmentManager().popBackStack();
+                    final FragmentTransaction ExtDataManager = getFragmentManager().beginTransaction();
 
-                ExtDataManager.addToBackStack(null);
-                ExtDataManager.commit();
+                    //Replace it with Camera Fragment layout
+                    ExtDataManager.replace(R.id.menu_frag, new CameraFragment(), "CameraFragmentTag");
+                    //push replacement and add this previous fragment to backstack incase want to go back to it
+
+                    ExtDataManager.addToBackStack(null);
+                    ExtDataManager.commit();
+                } catch (NullPointerException e){
+                    Log.d("Error: NPE", "NullpointerException in support frag");
+                }
 
 
                 //Debug test message when button is clicked

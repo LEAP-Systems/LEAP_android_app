@@ -23,11 +23,12 @@ public class MainActivity extends AppCompatActivity {
         //Instantiate fragment manager and transaction
         mainFragmentManager = getSupportFragmentManager();
         fragmentTransaction = mainFragmentManager.beginTransaction();
+        mainFragmentManager.beginTransaction().add(R.id.menu_frag, new MenuFragment()).commit();
 
-        if (savedInstanceState == null) {
+       // if (savedInstanceState == null) {
             //Initialize and create first fragment using the menu_frag_layout and MenuFragment class
-            mainFragmentManager.beginTransaction().add(R.id.menu_frag, new MenuFragment()).commit();
-        }
+        //    mainFragmentManager.beginTransaction().add(R.id.menu_frag, new MenuFragment()).commit();
+        //}
 
 
     }
