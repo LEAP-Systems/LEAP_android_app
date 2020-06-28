@@ -7,14 +7,27 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 public class MainActivity extends AppCompatActivity {
+
+    FragmentManager mainFragmentManager;
+    FragmentTransaction fragmentTransaction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Instantiate fragment manager and transaction
+        mainFragmentManager = getSupportFragmentManager();
+        fragmentTransaction = mainFragmentManager.beginTransaction();
+
+        if (savedInstanceState == null) {
+            //Initialize and create first fragment using the menu_frag_layout and MenuFragment class
+            mainFragmentManager.beginTransaction().add(R.id.menu_frag, new MenuFragment()).commit();
+        }
 
 
     }

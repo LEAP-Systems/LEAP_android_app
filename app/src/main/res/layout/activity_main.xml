@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
 
-    <fragment
+    <FrameLayout
         android:id="@+id/menu_frag"
         android:name="com.leap_android.MenuFragment"
         android:layout_width="344dp"
@@ -18,18 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <fragment
-        android:id="@+id/camera_frag"
-        android:name="com.leap_android.CameraFragment"
-        android:layout_width="344dp"
-        android:layout_height="385dp"
-        android:layout_marginTop="268dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:layout_weight="2"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
