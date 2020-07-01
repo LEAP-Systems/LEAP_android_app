@@ -9,6 +9,7 @@ buildscript {
         //Re-committing to see if build is fixed after gradle update
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
+        //Deleted NDK file hope is fixes issues
     }
 }
 
