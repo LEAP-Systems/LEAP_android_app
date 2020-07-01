@@ -1,5 +1,6 @@
 package com.leap_android;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -7,6 +8,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.camera.core.CameraX;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -31,6 +33,19 @@ public class MainActivity extends AppCompatActivity {
         //}
 
 
+    }
+
+    //For simplicity sakes, unbindAll onBackPressed unbinds the camera to the lifecycle for the camerafragment
+    //Currently, this is the solution looking for a more optimal one if possible
+    @SuppressLint("RestrictedApi")
+    @Override
+    public void onBackPressed() {
+        if(mainFragmentManager.getBackStackEntryCount() == 0){
+            finish();
+        }else{
+            CameraX.unbindAll();
+            super.onBackPressed();
+        }
     }
 
 

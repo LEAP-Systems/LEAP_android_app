@@ -10,16 +10,13 @@
     <FrameLayout
         android:id="@+id/menu_frag"
         android:name="com.leap_android.MenuFragment"
-        android:layout_width="354dp"
-        android:layout_height="637dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
+        android:layout_width="348dp"
+        android:layout_height="659dp"
+        android:layout_marginTop="16dp"
         android:layout_weight="2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

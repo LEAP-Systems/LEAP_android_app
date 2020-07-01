@@ -88,12 +88,7 @@ public class CameraFragment extends Fragment{
             ActivityCompat.requestPermissions(getActivity(), REQUIRED_PERMISSIONS, REQUEST_CODE_PERMISSIONS);
         }
 
-
         return cam_view;
-    }
-
-    private void setupCam(int width, int height){
-
     }
 
     private boolean allPermissionsGranted(){
@@ -119,6 +114,7 @@ public class CameraFragment extends Fragment{
         }
     }
 
+    //To set-up and initialize camera
     private Executor executor = Executors.newSingleThreadExecutor();
     private void startCamera() {
 
@@ -140,7 +136,7 @@ public class CameraFragment extends Fragment{
         }, ContextCompat.getMainExecutor(getContext()));
     }
 
-
+    //For previewing Camera method
     void bindPreview(@NonNull ProcessCameraProvider cameraProvider) {
 
         preview = new Preview.Builder().build();
@@ -195,6 +191,18 @@ public class CameraFragment extends Fragment{
             }
         }); */
     }
+
+    /**
+    private final static String TAG_FRAGMENT = "TAG_FRAGMENT";
+
+    private void showFragment() {
+        final Myfragment fragment = new MyFragment();
+        final FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragment, fragment, TAG_FRAGMENT);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+    **/
 
 
 
