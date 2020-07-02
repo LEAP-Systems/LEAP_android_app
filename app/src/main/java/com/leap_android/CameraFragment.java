@@ -2,7 +2,6 @@ package com.leap_android;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
 import android.hardware.camera2.CameraDevice;
 import android.hardware.camera2.CameraManager;
 import android.os.Build;
@@ -23,7 +22,6 @@ import androidx.camera.core.Camera;
 import androidx.camera.core.CameraSelector;
 import androidx.camera.core.ImageAnalysis;
 import androidx.camera.core.ImageCapture;
-import androidx.camera.core.ImageProxy;
 import androidx.camera.core.Preview;
 import androidx.camera.extensions.HdrImageCaptureExtender;
 import androidx.camera.lifecycle.ProcessCameraProvider;
@@ -45,7 +43,7 @@ import static com.leap_android.R.id.cameraView;
 public class CameraFragment extends Fragment{
 
 
-    TextView camTextureView;
+    TextView testView;
 
     CameraManager cam_manager;
     SurfaceView surfaceView;
@@ -146,35 +144,6 @@ public class CameraFragment extends Fragment{
 
         ImageAnalysis imageAnalysis = new ImageAnalysis.Builder()
                 .build();
-
-        //TRYING TO SETUP getting Bitmap to feed into NN to read images and determine result based on model
-        /**
-        //Get bitmap from Image Preview with Image Analysis CameraX library
-        imageAnalysis.setAnalyzer(
-                new ImageAnalysis.Analyzer() {
-                    @Override
-                    public void analyze(@NonNull ImageProxy image) {
-                        final Bitmap bitmap = mPreviewView.getBitmap();
-                        if(bitmap==null)
-                            return;
-
-                        Mat mat = new Mat();
-                        Utils.bitmapToMat(bitmap, mat);
-
-
-                        Imgproc.cvtColor(mat, mat, currentImageType);
-                        Utils.matToBitmap(mat, bitmap);
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                ivBitmap.setImageBitmap(bitmap);
-                            }
-                        });
-                    }
-
-                }
-        );
-        **/
 
         ImageCapture.Builder builder = new ImageCapture.Builder();
 
