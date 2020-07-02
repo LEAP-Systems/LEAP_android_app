@@ -16,11 +16,7 @@ android {
         versionName "1.0"
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-<<<<<<< HEAD
-        //Going with recommendation setup in Tensorflow lite documentation, they said to omit x86, x86_64 and arm32
-        
-=======
->>>>>>> 95c1469... to working build
+        //Test commit to see if CI passes
     }
 
     buildTypes {
