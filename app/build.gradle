@@ -16,7 +16,7 @@ android {
         versionName "1.0"
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        //Test commit to see if CI passes
+
     }
 
     buildTypes {
@@ -29,8 +29,12 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
-
     }
+
+    aaptOptions {
+        noCompress "tflite"
+    }
+
 }
 
 dependencies {
@@ -42,6 +46,10 @@ dependencies {
     implementation "androidx.camera:camera-lifecycle:${camerax_version}"
     implementation"androidx.camera:camera-view:1.0.0-alpha13"
     implementation "androidx.camera:camera-extensions:1.0.0-alpha13"
+
+    //TFlite dependecies
+    implementation('org.tensorflow:tensorflow-lite:0.0.0-nightly') { changing = true }
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
