@@ -153,7 +153,7 @@ public class CameraFragment extends Fragment{
 
         //Set imageanalysis to "blocking" mode with setBackPressureStategy() which means that the given thread cannot do anything until IO is fully received
         ImageAnalysis imageAnalysis = new ImageAnalysis.Builder()
-                .setTargetResolution(new Size(1280, 720))
+                .setTargetResolution(new Size(300, 300))
                 .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
                 .build();
 
@@ -172,8 +172,15 @@ public class CameraFragment extends Fragment{
             @Override
             public void analyze(@NonNull ImageProxy image) {
                 int rotationDegrees = image.getImageInfo().getRotationDegrees();
-                // insert your code here.
+                int width = image.getWidth();
+                int height = image.getHeight();
+
                 Log.v("angle", Integer.toString(rotationDegrees));
+                Log.v("height", Integer.toString(height));
+                Log.v("width", Integer.toString(width));
+
+                //Need to include TF Lite Classification code below here
+
             }
         });
 
@@ -212,6 +219,7 @@ public class CameraFragment extends Fragment{
     }
     **/
 
+    //Converting image proxy to bitmap
     private Bitmap imageProxyToBitmap(ImageProxy image)
     {
         //Loop throughout the pixel and convert it to bitmap then directly convert bytes to bitmap
